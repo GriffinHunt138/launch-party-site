@@ -110,7 +110,7 @@ export default function PortfolioCarousel() {
           onSelect={onMainCarouselSelect}
           className="w-full max-w-6xl mx-auto"
         >
-          <CarouselContent style={{ touchAction: 'pan-y' }}> {/* Prevent horizontal swiping on main carousel */}
+          <CarouselContent style={{ touchAction: 'none' }}> {/* Prevent all touch-based horizontal scrolling on main carousel */}
             {portfolioProjects.map((project) => (
               <CarouselItem key={project.id} className="basis-full">
                 <div className="p-1">
@@ -157,7 +157,7 @@ export default function PortfolioCarousel() {
                         }}
                         className="w-full"
                       >
-                        <CarouselContent className="-ml-2">
+                        <CarouselContent className="-ml-2" style={{ touchAction: 'pan-x' }}> {/* Explicitly allow horizontal swiping on inner carousel */}
                           {project.screenshots.map((screenshot) => (
                             <CarouselItem key={screenshot.id} className="basis-[85%] pl-2">
                               <Card className="overflow-hidden">
