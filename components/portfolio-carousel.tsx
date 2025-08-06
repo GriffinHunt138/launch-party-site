@@ -110,7 +110,7 @@ export default function PortfolioCarousel() {
           onSelect={onMainCarouselSelect}
           className="w-full max-w-6xl mx-auto"
         >
-          <CarouselContent>
+          <CarouselContent style={{ touchAction: 'pan-y' }}> {/* Prevent horizontal swiping on main carousel */}
             {portfolioProjects.map((project) => (
               <CarouselItem key={project.id} className="basis-full">
                 <div className="p-1">
