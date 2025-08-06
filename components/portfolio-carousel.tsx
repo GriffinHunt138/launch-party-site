@@ -1,7 +1,10 @@
 "use client"
 import Image from "next/image"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { useState, useCallback } from "react"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button" // Ensure Button is imported
+import { ArrowLeft, ArrowRight } from 'lucide-react' // Ensure icons are imported
 
 // You can replace these with your actual projects
 const portfolioProjects = [
@@ -76,6 +79,24 @@ const portfolioProjects = [
 ]
 
 export default function PortfolioCarousel() {
+  const [mainCarouselApi, setMainCarouselApi] = useState<CarouselApi>()
+  const [canScrollPrevApp, setCanScrollPrevApp] = useState(false)
+  const [canScrollNextApp, setCanScrollNextApp] = useState(false)
+
+  const onMainCarouselSelect = useCallback((api: CarouselApi) => {
+    if (!api) return
+    setCanScrollPrevApp(api.canScrollPrev())
+    setCanScrollNextApp(api.canScrollNext())
+  }, [])
+
+  const scrollPrevApp = useCallback(() => {
+    mainCarouselApi?.scrollPrev()
+  }, [mainCarouselApi])
+
+  const scrollNextApp = useCallback(() => {
+    mainCarouselApi?.scrollNext()
+  }, [mainCarouselApi])
+
   return (
     <div className="w-full py-10 bg-gray-50">
       <div className="container px-4 md:px-6">
@@ -90,16 +111,12 @@ export default function PortfolioCarousel() {
           opts={{
             align: "start",
             loop: true,
+            draggable: false, // Disable swiping for the main app carousel
           }}
+          setApi={setMainCarouselApi}
+          onSelect={onMainCarouselSelect}
           className="w-full max-w-6xl mx-auto"
         >
-          {/* Mobile-only app switching arrows above the content */}
-          <div className="flex justify-between items-center mb-6 px-4 md:hidden">
-            <CarouselPrevious className="relative" />
-            <span className="sr-only">Switch between apps</span>
-            <CarouselNext className="relative" />
-          </div>
-
           <CarouselContent>
             {portfolioProjects.map((project) => (
               <CarouselItem key={project.id} className="basis-full">
@@ -108,6 +125,30 @@ export default function PortfolioCarousel() {
                     <div className="text-center mb-6">
                       <h3 className="text-2xl font-bold">{project.title}</h3>
                       <p className="text-gray-500 mt-2 max-w-2xl mx-auto">{project.description}</p>
+                    </div>
+
+                    {/* Mobile-only app switching arrows under description */}
+                    <div className="flex justify-center gap-4 mb-6 md:hidden">
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full"
+                        onClick={scrollPrevApp}
+                        disabled={!canScrollPrevApp}
+                        aria-label="Previous app"
+                      >
+                        <ArrowLeft className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full"
+                        onClick={scrollNextApp}
+                        disabled={!canScrollNextApp}
+                        aria-label="Next app"
+                      >
+                        <ArrowRight className="h-4 w-4" />
+                      </Button>
                     </div>
 
                     {/* Desktop: Show all 3 screenshots side by side */}
@@ -129,19 +170,19 @@ export default function PortfolioCarousel() {
                       ))}
                     </div>
 
-                    {/* Mobile: Show screenshots in a horizontal carousel (no arrows, with preview) */}
+                    {/* Mobile: Show screenshots in a horizontal carousel (swipe only, with preview) */}
                     <div className="md:hidden w-full max-w-sm">
                       <Carousel
                         opts={{
-                          align: "start", // Changed from "center" to "start" for preview
+                          align: "start",
                           loop: true,
                           dragFree: true, // Allow free dragging for swiping
                         }}
                         className="w-full"
                       >
-                        <CarouselContent className="-ml-2"> {/* Adjust margin for preview */}
+                        <CarouselContent className="-ml-2">
                           {project.screenshots.map((screenshot) => (
-                            <CarouselItem key={screenshot.id} className="basis-[85%] pl-2"> {/* Adjust basis for preview */}
+                            <CarouselItem key={screenshot.id} className="basis-[85%] pl-2">
                               <Card className="overflow-hidden">
                                 <CardContent className="p-0">
                                   <div className="relative w-full">
