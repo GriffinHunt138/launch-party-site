@@ -89,14 +89,6 @@ export default function PortfolioCarousel() {
     setCanScrollNextApp(api.canScrollNext())
   }, [])
 
-  const scrollPrevApp = useCallback(() => {
-    mainCarouselApi?.scrollPrev()
-  }, [mainCarouselApi])
-
-  const scrollNextApp = useCallback(() => {
-    mainCarouselApi?.scrollNext()
-  }, [mainCarouselApi])
-
   return (
     <div className="w-full py-10 bg-gray-50">
       <div className="container px-4 md:px-6">
@@ -112,6 +104,7 @@ export default function PortfolioCarousel() {
             align: "start",
             loop: true,
             draggable: false, // Disable swiping for the main app carousel
+            dragFree: false, // Ensure no free dragging either
           }}
           setApi={setMainCarouselApi}
           onSelect={onMainCarouselSelect}
@@ -129,26 +122,9 @@ export default function PortfolioCarousel() {
 
                     {/* Mobile-only app switching arrows under description */}
                     <div className="flex justify-center gap-4 mb-6 md:hidden">
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full"
-                        onClick={scrollPrevApp}
-                        disabled={!canScrollPrevApp}
-                        aria-label="Previous app"
-                      >
-                        <ArrowLeft className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full"
-                        onClick={scrollNextApp}
-                        disabled={!canScrollNextApp}
-                        aria-label="Next app"
-                      >
-                        <ArrowRight className="h-4 w-4" />
-                      </Button>
+                      {/* These CarouselPrevious/Next components will control the parent (app) carousel */}
+                      <CarouselPrevious className="relative static" /> {/* Override absolute positioning */}
+                      <CarouselNext className="relative static" /> {/* Override absolute positioning */}
                     </div>
 
                     {/* Desktop: Show all 3 screenshots side by side */}
@@ -177,6 +153,7 @@ export default function PortfolioCarousel() {
                           align: "start",
                           loop: true,
                           dragFree: true, // Allow free dragging for swiping
+                          draggable: true, // Ensure it's draggable for swiping
                         }}
                         className="w-full"
                       >
@@ -199,7 +176,7 @@ export default function PortfolioCarousel() {
                             </CarouselItem>
                           ))}
                         </CarouselContent>
-                        {/* Removed inner CarouselPrevious and CarouselNext */}
+                        {/* No inner CarouselPrevious and CarouselNext here */}
                       </Carousel>
                     </div>
                   </div>
@@ -207,6 +184,7 @@ export default function PortfolioCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
+
           {/* Desktop-only app switching arrows below the content */}
           <div className="flex justify-center mt-8 gap-4 hidden md:flex">
             <CarouselPrevious />
