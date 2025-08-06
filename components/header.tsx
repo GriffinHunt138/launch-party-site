@@ -27,11 +27,11 @@ export default function Header() {
           <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
             Home
           </Link>
-          <Link href="/case-studies/smartcart" className="text-sm font-medium hover:text-primary transition-colors">
-            Case Study
-          </Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">
             About Us
+          </Link>
+          <Link href="/case-studies/smartcart" className="text-sm font-medium hover:text-primary transition-colors">
+            Case Study
           </Link>
           <Link href="/pricing" className="text-sm font-medium hover:text-primary transition-colors">
             Pricing
@@ -53,18 +53,18 @@ export default function Header() {
                 Home
               </Link>
               <Link
-                href="/case-studies/smartcart"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Case Study
-              </Link>
-              <Link
                 href="/about"
                 className="text-sm font-medium hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
+              </Link>
+              <Link
+                href="/case-studies/smartcart"
+                className="text-sm font-medium hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Case Study
               </Link>
               <Link
                 href="/pricing"

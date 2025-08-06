@@ -27,15 +27,11 @@ export default function PricingPage() {
               <ul className="mb-8 space-y-4 flex-1">
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-2" />
-                  <span>1 platform (iOS or Web)</span>
+                  <span>1 platform (iOS/Android or Web)</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-2" />
-                  <span>3 core features</span>
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-500 mr-2" />
-                  <span>2 rounds of revisions</span>
+                  <span>Frontend only</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-2" />
@@ -64,15 +60,11 @@ export default function PricingPage() {
               <ul className="mb-8 space-y-4 flex-1">
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-2" />
-                  <span>2 platforms (iOS + Web)</span>
+                  <span>2 platforms (iOS/Android + Web)</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Up to 6 features</span>
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Unlimited revisions in build phase</span>
+                  <span>Frontend, backend, and AI integration included</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-2" />

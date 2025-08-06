@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Code, Rocket, Clock } from "lucide-react"
+import { ArrowRight, Code, Rocket, Clock } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import PortfolioCarousel from "@/components/portfolio-carousel"
 
@@ -51,7 +51,7 @@ export default function LandingPage() {
               <div className="p-4 bg-white rounded-full shadow-sm">
                 <Code className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-xl font-bold">iOS + Web Apps</h3>
+              <h3 className="text-xl font-bold">iOS/Android + Web Apps</h3>
               <p className="text-gray-500 dark:text-gray-400">
                 Get your product on multiple platforms with our cross-platform development expertise.
               </p>

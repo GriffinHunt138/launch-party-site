@@ -93,6 +93,13 @@ export default function PortfolioCarousel() {
           }}
           className="w-full max-w-6xl mx-auto"
         >
+          {/* Mobile-only app switching arrows above the content */}
+          <div className="flex justify-between items-center mb-6 px-4 md:hidden">
+            <CarouselPrevious className="relative" />
+            <span className="sr-only">Switch between apps</span>
+            <CarouselNext className="relative" />
+          </div>
+
           <CarouselContent>
             {portfolioProjects.map((project) => (
               <CarouselItem key={project.id} className="basis-full">
@@ -122,18 +129,19 @@ export default function PortfolioCarousel() {
                       ))}
                     </div>
 
-                    {/* Mobile: Show screenshots in a horizontal carousel */}
+                    {/* Mobile: Show screenshots in a horizontal carousel (no arrows, with preview) */}
                     <div className="md:hidden w-full max-w-sm">
                       <Carousel
                         opts={{
-                          align: "center",
+                          align: "start", // Changed from "center" to "start" for preview
                           loop: true,
+                          dragFree: true, // Allow free dragging for swiping
                         }}
                         className="w-full"
                       >
-                        <CarouselContent>
+                        <CarouselContent className="-ml-2"> {/* Adjust margin for preview */}
                           {project.screenshots.map((screenshot) => (
-                            <CarouselItem key={screenshot.id} className="basis-full">
+                            <CarouselItem key={screenshot.id} className="basis-[85%] pl-2"> {/* Adjust basis for preview */}
                               <Card className="overflow-hidden">
                                 <CardContent className="p-0">
                                   <div className="relative w-full">
@@ -150,10 +158,7 @@ export default function PortfolioCarousel() {
                             </CarouselItem>
                           ))}
                         </CarouselContent>
-                        <div className="flex justify-center mt-4 gap-4">
-                          <CarouselPrevious />
-                          <CarouselNext />
-                        </div>
+                        {/* Removed inner CarouselPrevious and CarouselNext */}
                       </Carousel>
                     </div>
                   </div>
@@ -161,7 +166,8 @@ export default function PortfolioCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center mt-8 gap-4">
+          {/* Desktop-only app switching arrows below the content */}
+          <div className="flex justify-center mt-8 gap-4 hidden md:flex">
             <CarouselPrevious />
             <CarouselNext />
           </div>

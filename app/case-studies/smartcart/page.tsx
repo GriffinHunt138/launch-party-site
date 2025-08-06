@@ -284,9 +284,7 @@ export default function SmartCartCaseStudy() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Next Steps</h2>
           
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              <span className="font-semibold text-gray-900">Q4 2025 App Store release planned</span>
-            </p>
+            {/* Removed: <p><span className="font-semibold text-gray-900">Q4 2025 App Store release planned</span></p> */}
             
             <p className="font-semibold text-gray-900 mt-8">Feature roadmap includes:</p>
             <ul className="list-disc list-inside space-y-3 ml-4">
