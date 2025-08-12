@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Check } from 'lucide-react'
+import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function PricingPage() {
@@ -86,6 +86,13 @@ export default function PricingPage() {
                 </Button>
               </Link>
             </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <strong>100% Satisfaction Guarantee:</strong> You don't pay until after your app is complete and you're
+              completely satisfied with our work.
+            </p>
           </div>
         </div>
       </section>

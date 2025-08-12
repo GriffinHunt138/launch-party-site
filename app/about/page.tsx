@@ -6,13 +6,13 @@ export default function AboutPage() {
       name: "Griffin Hunt",
       title: "Founder & Lead Engineer",
       bio: "Griffin holds degrees in Finance and Mathematics from Tulane University and brings ample app development experience to every project. He combines analytical thinking with technical expertise to build robust, scalable applications.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/griffin-headshot.jpeg",
     },
     {
       name: "Tejas Sagubadi",
       title: "Project Manager",
       bio: "Tejas earned his degree in Business Management from the University of North Carolina at Chapel Hill and has ample experience as a project manager and leader. He ensures seamless project execution and client satisfaction from concept to launch.",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/tejas-headshot.jpeg",
     },
   ]
 
@@ -33,7 +33,12 @@ export default function AboutPage() {
             {teamMembers.map((member, index) => (
               <div key={index} className="flex flex-col items-center space-y-4">
                 <div className="relative w-40 h-40 overflow-hidden rounded-full">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    fill
+                    className={`${member.name === "Tejas Sagubadi" ? "object-cover object-top" : "object-cover scale-110"}`}
+                  />
                 </div>
                 <div className="text-center">
                   <h3 className="text-xl font-bold">{member.name}</h3>

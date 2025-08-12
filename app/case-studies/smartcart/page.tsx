@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar, Users, Smartphone, Code } from 'lucide-react'
+import { ArrowRight, Calendar, Users, Smartphone, Code } from "lucide-react"
 
 export default function SmartCartCaseStudy() {
   return (
@@ -21,14 +21,15 @@ export default function SmartCartCaseStudy() {
               under 60 seconds.
             </p>
           </div>
-          
+
           <div className="mt-12">
-            <div className="relative w-full h-96 md:h-[500px] bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-full max-w-[920px] mx-auto bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=500&width=800&text=SmartCartAI+ Hero Image"
-                alt="SmartCartAI+ App Interface"
-                fill
-                className="object-cover"
+                src="/images/smartcart-hero.png"
+                alt="SmartCartAI+ App Features - AI-Personalized Meal Planning, Smart Grocery Lists, Easy-to-Follow Recipes, and Grocery Price Tracking"
+                width={920}
+                height={500}
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -41,15 +42,13 @@ export default function SmartCartCaseStudy() {
       <section className="w-full py-16 md:py-20">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Project Overview</h2>
-          
+
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
             <p>
               SmartCartAI+ is an AI-driven iOS app that creates personalized meal plans and grocery lists based on user
               preferences, goals, and dietary restrictions.
             </p>
-            <p>
-              The app intelligently adjusts based on feedback and learns user behavior over time.
-            </p>
+            <p>The app intelligently adjusts based on feedback and learns user behavior over time.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -61,7 +60,7 @@ export default function SmartCartCaseStudy() {
                   <p className="text-gray-600">Internal (Launch Party MVP demo)</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Calendar className="h-6 w-6 text-blue-600" />
                 <div>
@@ -69,7 +68,7 @@ export default function SmartCartCaseStudy() {
                   <p className="text-gray-600">4 weeks</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Smartphone className="h-6 w-6 text-blue-600" />
                 <div>
@@ -87,7 +86,7 @@ export default function SmartCartCaseStudy() {
                   <p className="text-gray-600">SwiftUI, OpenAI API, Firebase</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Users className="h-6 w-6 text-blue-600" />
                 <div>
@@ -99,12 +98,13 @@ export default function SmartCartCaseStudy() {
           </div>
 
           <div className="mt-12">
-            <div className="relative w-full h-80 bg-gray-100 rounded-xl overflow-hidden shadow-md">
+            <div className="relative w-full max-w-2xl mx-auto bg-gray-100 rounded-xl overflow-hidden">
               <Image
-                src="/placeholder.svg?height=320&width=600&text=App Screenshot Overview"
-                alt="SmartCartAI+ App Overview"
-                fill
-                className="object-cover"
+                src="/images/smartcart-tech-stack-hd.png"
+                alt="SmartCartAI+ Tech Stack - Frontend (Swift), Backend (Firebase), and API"
+                width={600}
+                height={300}
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -117,14 +117,10 @@ export default function SmartCartCaseStudy() {
       <section className="w-full py-16 md:py-20">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">The Problem</h2>
-          
+
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              Most grocery and meal planning apps are static, time-consuming, and lack personalization.
-            </p>
-            <p>
-              Users are forced to manually plan meals and track ingredients across multiple apps.
-            </p>
+            <p>Most grocery and meal planning apps are static, time-consuming, and lack personalization.</p>
+            <p>Users are forced to manually plan meals and track ingredients across multiple apps.</p>
             <p>
               Our goal was to create a mobile-first solution that automates planning and reduces decision fatigue and
               food waste.
@@ -139,23 +135,20 @@ export default function SmartCartCaseStudy() {
       <section className="w-full py-16 md:py-20">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Design & UX</h2>
-          
+
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              We created wireframes in Figma focused on delivering an intuitive, no-clutter user experience.
-            </p>
-            <p>
-              Users could go from inputting goals to generating a dynamic grocery list in under 60 seconds.
-            </p>
+            <p>We created wireframes in Figma focused on delivering an intuitive, no-clutter user experience.</p>
+            <p>Users could go from inputting goals to generating a dynamic grocery list in under 60 seconds.</p>
           </div>
 
           <div className="mt-12">
-            <div className="relative w-full h-96 bg-gray-100 rounded-xl overflow-hidden shadow-md">
+            <div className="relative w-full max-w-3xl mx-auto bg-white rounded-xl overflow-hidden">
               <Image
-                src="/placeholder.svg?height=384&width=600&text=Wireframe and UI Design Preview"
-                alt="SmartCartAI+ Design Process"
-                fill
-                className="object-cover"
+                src="/images/smartcart-design-flow-hd.png"
+                alt="SmartCartAI+ User Flow - Daily Nutrition Goals with calorie targets and shopping parameters, Profile setup with user metrics and activity level, leading to AI meal plan generation"
+                width={800}
+                height={400}
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -167,18 +160,12 @@ export default function SmartCartCaseStudy() {
       {/* Prompt Engineering & AI Fine-Tuning */}
       <section className="w-full py-16 md:py-20">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-            Prompt Engineering & AI Fine-Tuning
-          </h2>
-          
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Prompt Engineering & AI Fine-Tuning</h2>
+
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              This was the core innovation in SmartCartAI+.
-            </p>
-            <p>
-              We built a multi-step prompt system using OpenAI that:
-            </p>
-            
+            <p>This was the core innovation in SmartCartAI+.</p>
+            <p>We built a multi-step prompt system using OpenAI that:</p>
+
             <ul className="list-disc list-inside space-y-3 ml-4">
               <li>Translated user goals into structured daily plans</li>
               <li>Generated full meal menus with ingredients and macros</li>
@@ -201,12 +188,13 @@ export default function SmartCartCaseStudy() {
           </div>
 
           <div className="mt-12">
-            <div className="relative w-full h-96 bg-gray-100 rounded-xl overflow-hidden shadow-md">
+            <div className="relative w-full max-w-4xl mx-auto bg-white rounded-xl overflow-hidden">
               <Image
-                src="/placeholder.svg?height=384&width=600&text=AI Prompt Workflow Examples"
-                alt="AI Prompt Engineering Process"
-                fill
-                className="object-cover"
+                src="/images/smartcart-prompt-engineering.png"
+                alt="SmartCartAI+ Prompt Engineering - Meal prep mode requirements and strict requirements code documentation"
+                width={1000}
+                height={400}
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -219,15 +207,11 @@ export default function SmartCartCaseStudy() {
       <section className="w-full py-16 md:py-20">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Build & Deploy</h2>
-          
+
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              The app was built entirely with SwiftUI.
-            </p>
-            <p>
-              Firebase powered real-time data sync, pantry management, and user sessions.
-            </p>
-            
+            <p>The app was built entirely with SwiftUI.</p>
+            <p>Firebase powered real-time data sync, pantry management, and user sessions.</p>
+
             <p className="font-semibold text-gray-900 mt-8">Features included:</p>
             <ul className="list-disc list-inside space-y-3 ml-4">
               <li>AI-generated meal plans</li>
@@ -236,17 +220,6 @@ export default function SmartCartCaseStudy() {
               <li>Pantry tracking</li>
               <li>Calorie/macro analysis</li>
             </ul>
-          </div>
-
-          <div className="mt-12">
-            <div className="relative w-full h-96 bg-gray-100 rounded-xl overflow-hidden shadow-md">
-              <Image
-                src="/placeholder.svg?height=384&width=600&text=App Features Screenshots"
-                alt="SmartCartAI+ Features"
-                fill
-                className="object-cover"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -257,16 +230,16 @@ export default function SmartCartCaseStudy() {
       <section className="w-full py-16 md:py-20">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">What We Learned</h2>
-          
+
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
             <div className="bg-gray-50 p-6 rounded-xl">
               <p className="font-semibold text-gray-900 text-xl">Prompt design is product design</p>
             </div>
-            
+
             <div className="bg-gray-50 p-6 rounded-xl">
-              <p className="font-semibold text-gray-900 text-xl">Simplicity {'>'} novelty in user-facing AI tools</p>
+              <p className="font-semibold text-gray-900 text-xl">Simplicity {">"} novelty in user-facing AI tools</p>
             </div>
-            
+
             <div className="bg-gray-50 p-6 rounded-xl">
               <p className="font-semibold text-gray-900 text-xl">
                 Micro changes in prompts had macro impacts on user trust and satisfaction
@@ -282,10 +255,8 @@ export default function SmartCartCaseStudy() {
       <section className="w-full py-16 md:py-20">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Next Steps</h2>
-          
+
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            {/* Removed: <p><span className="font-semibold text-gray-900">Q4 2025 App Store release planned</span></p> */}
-            
             <p className="font-semibold text-gray-900 mt-8">Feature roadmap includes:</p>
             <ul className="list-disc list-inside space-y-3 ml-4">
               <li>Recipe imports</li>
@@ -301,13 +272,9 @@ export default function SmartCartCaseStudy() {
       {/* Final CTA Section */}
       <section className="w-full py-16 md:py-24 bg-gray-50">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Have a bold product idea?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            We ship MVPs fast — from idea to launch in 30 days.
-          </p>
-          
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Have a bold product idea?</h2>
+          <p className="text-xl text-gray-600 mb-8">We ship MVPs fast — from idea to launch in 30 days.</p>
+
           <Link href="https://calendly.com/griffinhunt138/30min" target="_blank" rel="noopener noreferrer">
             <Button className="px-8 py-6 text-lg">
               Book a free discovery call

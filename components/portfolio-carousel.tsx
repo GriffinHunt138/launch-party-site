@@ -1,10 +1,15 @@
 "use client"
 import Image from "next/image"
 import { useState, useCallback } from "react"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button" // Ensure Button is imported
-import { ArrowLeft, ArrowRight } from 'lucide-react' // Ensure icons are imported
 
 // You can replace these with your actual projects
 const portfolioProjects = [
@@ -110,7 +115,9 @@ export default function PortfolioCarousel() {
           onSelect={onMainCarouselSelect}
           className="w-full max-w-6xl mx-auto"
         >
-          <CarouselContent style={{ touchAction: 'none' }}> {/* Prevent all touch-based horizontal scrolling on main carousel */}
+          <CarouselContent style={{ touchAction: "pan-y" }}>
+            {" "}
+            {/* Allow vertical scrolling but prevent horizontal swiping on main carousel */}
             {portfolioProjects.map((project) => (
               <CarouselItem key={project.id} className="basis-full">
                 <div className="p-1">
@@ -157,7 +164,9 @@ export default function PortfolioCarousel() {
                         }}
                         className="w-full"
                       >
-                        <CarouselContent className="-ml-2" style={{ touchAction: 'pan-x' }}> {/* Explicitly allow horizontal swiping on inner carousel */}
+                        <CarouselContent className="-ml-2" style={{ touchAction: "pan-x" }}>
+                          {" "}
+                          {/* Explicitly allow horizontal swiping on inner carousel */}
                           {project.screenshots.map((screenshot) => (
                             <CarouselItem key={screenshot.id} className="basis-[85%] pl-2">
                               <Card className="overflow-hidden">

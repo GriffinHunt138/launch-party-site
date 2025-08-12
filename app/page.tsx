@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Code, Rocket, Clock } from 'lucide-react'
+import { ArrowRight, Code, Rocket, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import PortfolioCarousel from "@/components/portfolio-carousel"
 
@@ -7,7 +7,7 @@ export default function LandingPage() {
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-white">
+      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-br from-blue-100 via-slate-50 to-gray-200">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
